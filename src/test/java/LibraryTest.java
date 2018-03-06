@@ -7,11 +7,13 @@ public class LibraryTest {
 
     Library library;
     Book book;
+    BorrowedBook borrowedBook;
 
     @Before
     public void before() {
         library = new Library(15);
         book = new Book("Learn Java in 30 days");
+        borrowedBook = new BorrowedBook("Learn Ruby in 30 days");
     }
 
     @Test
@@ -39,4 +41,11 @@ public class LibraryTest {
         }
         assertEquals(15, library.countBooks());
     }
+
+    @Test
+    public void countBorrowedBooksInLibrary() {
+        int borrowedBooks = library.countBorrowedBooks();
+        assertEquals(0, borrowedBooks);
+    }
+
 }

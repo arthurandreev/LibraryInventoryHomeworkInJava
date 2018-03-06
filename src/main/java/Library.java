@@ -4,10 +4,12 @@ public class Library {
 
     private int capacity;
     private ArrayList<Book> books;
+    private ArrayList<BorrowedBook> borrowedBooks;
 
     public Library(int capacity) {
         this.capacity = capacity;
         this.books = new ArrayList<>();
+        this.borrowedBooks = new ArrayList<>();
     }
 
     public int getCapacity() {
@@ -22,5 +24,9 @@ public class Library {
         if (countBooks() < this.capacity) {
             this.books.add(book);
         }
+    }
+
+    public int countBorrowedBooks() {
+        return borrowedBooks.size();
     }
 }
